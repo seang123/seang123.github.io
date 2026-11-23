@@ -12,7 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.16.18"
+    "@asciidoctor/core": "^4.3.0",
+    "astro": "^4.16.18",
+    "shiki": "^1.29.2"
   },
   "allowScripts": {
     "esbuild": true

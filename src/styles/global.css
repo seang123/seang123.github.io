@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: 'EB Garamond';
-  src: url('../assets/fonts/EBGaramond-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/EBGaramond-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: url('../assets/fonts/PublicSans-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/PublicSans-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
