@@ -37,7 +37,12 @@ export function listArticles(): string[] {
 /** Parse + convert an article. Called at request time in dev, so every reload sees the latest file. */
 export async function renderArticle(slug: string) {
   const file = path.join(ARTICLES_DIR, `${slug}.adoc`);
-  const doc = await loadFile(file, { safe: 'safe' });
+  // Relative image paths resolve against the article's own folder, which the article-assets
+  // integration (astro.config.mjs) publishes at /articles/<folder>/. The trailing "@" lets an
+  // article still override imagesdir itself.
+  const dir = path.posix.dirname(slug);
+  const imagesdir = dir === '.' ? '/articles' : `/articles/${dir}`;
+  const doc = await loadFile(file, { safe: 'safe', attributes: { imagesdir: `${imagesdir}@` } });
   return {
     title: doc.getDocumentTitle() as string,
     author: doc.getAttribute('author') as string | undefined,

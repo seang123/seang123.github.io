@@ -15,3 +15,8 @@ joshbradley.html
 
 EB_Garamond/
 Public_Sans/
+
+# LaTeX build files (figures build in a temp dir, but just in case)
+*.aux
+*.log
+*.dvi

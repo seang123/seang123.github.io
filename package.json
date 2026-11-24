@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "figures": "node scripts/build-figures.mjs"
   },
   "dependencies": {
     "@asciidoctor/core": "^4.3.0",

@@ -23,6 +23,9 @@ the foundation of the current Large Language Model (LLM) era.
 To better understand _why_ the transformer architecture came to be, and how it has evolved into one of the most
 widely adopted architectures in modern marhine learning, we must first revisit the challenges that led to its invention.
 
+image::assets/aiayn_architecture.png[400,400,align="center"]
+
+image::figures/input-matrix.svg[align="center",Input matrix X^(0), width=420]
 
 === Prior architectures
 

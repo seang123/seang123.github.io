@@ -7,9 +7,13 @@
 Start with a general introduction on the transformer and what came before (RNNs, Bahdanau Attention, ...).
 Try to paint a picture of how the basic idea of only using attention came to be:
 
-1. What was the previous state of the art?
-2. What problem does removing recurrence solve?
-3. What hardware improvements made transformers a viable candidate architecture? (Hint: GPUs)
+1. What was the problem being solved?
+2. What was the previous state of the art?
+3. What problem does removing recurrence solve?
+4. What hardware improvements made transformers a viable candidate architecture? (Hint: GPUs)
+
+- Background on RNNs
+
 
 
 ### 1. Previous state of the art

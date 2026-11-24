@@ -64,4 +64,26 @@ const article = await renderArticle(slug!);
   .adoc :global(.listingblock .title) {
     font-style: italic;
   }
+
+  /* Images: Asciidoctor's align= attribute becomes a text-{left,center,right} class. */
+  .adoc :global(.imageblock) {
+    margin: 1.5em 0;
+  }
+  .adoc :global(.imageblock img) {
+    max-width: 100%;
+    height: auto;
+  }
+  .adoc :global(.imageblock .title) {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .adoc :global(.text-left) {
+    text-align: left;
+  }
+  .adoc :global(.text-center) {
+    text-align: center;
+  }
+  .adoc :global(.text-right) {
+    text-align: right;
+  }
 </style>
