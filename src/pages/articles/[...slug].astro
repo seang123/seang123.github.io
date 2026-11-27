@@ -11,7 +11,7 @@ const { slug } = Astro.params;
 const article = await renderArticle(slug!);
 ---
 <Layout title={article.title}>
-  <Main>
+  <Main article>
     <article class="single adoc" itemscope>
       <h1 itemprop="headline">{article.title}</h1>
       {article.date && (
@@ -85,5 +85,56 @@ const article = await renderArticle(slug!);
   }
   .adoc :global(.text-right) {
     text-align: right;
+  }
+  .adoc :global(p),
+  .adoc :global(li){
+    max-width: 80ch;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  .adoc :global(p) {
+    margin: 0 0 1.1em;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+  }
+
+  .adoc :global(h2) {
+    margin: 2.2em 0 0.6em;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  .adoc :global(h3) {
+    margin: 1.8em 0 0.5em;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  /* Tables: aligned digits */
+  .adoc :global(table) {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Links: keep underlines clear of descenders */
+  .adoc :global(a) {
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+  }
+
+  /* Code: monospace runs visually large, so scale it down */
+  .adoc :global(:not(pre) > code) {
+    font-size: 0.88em;
+  }
+  .adoc :global(pre) {
+    font-size: 0.85em;
+    line-height: 1.45;
+    overflow-x: auto;
+  }
+  .adoc :global(pre code) {
+    font-size: inherit;
+  }
+
+  /* Equations: breathing room to match images */
+  .adoc :global(.stemblock) {
+    margin: 1.5em 0;
   }
 </style>

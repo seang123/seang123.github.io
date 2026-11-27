@@ -1,25 +1,31 @@
 ---
 interface Props {
   wide?: boolean;
+  article?: boolean;
 }
 
-const { wide = false } = Astro.props;
+const { wide = false, article = false } = Astro.props;
 ---
 
-<main class:list={{ wide }}>
+<main class:list={{ wide, article }}>
   <slot />
 </main>
 
 <style>
   main {
     box-sizing: content-box;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin: 44px auto 4rem;
     max-width: 46rem;
-    padding: 0 40px;
+    padding: 0 clamp(16px, 5vw, 40px);
+    line-height: 1.55;
   }
 
   main.wide {
     max-width: 56rem;
+  }
+
+  main.article {
+    max-width: 69rem; /* 1.5x the default 46rem */
   }
 </style>
